@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888" # Изменён порт для соответствия application.properties
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:practice_db
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: 123456
+      SERVER_PORT: 8888
